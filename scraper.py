@@ -38,7 +38,7 @@ class PeopleFreeSearchCrawler():
 			data = requests.get(url)
 			print('--------data----------', data.text)
 			selector = Selector(text=data.text)
-			selector = Selector(text=self.driver.page_source)
+# 			selector = Selector(text=self.driver.page_source)
 			name = selector.css('ol.inline > li:nth-child(1) article span.d-block::text').get()
 			if not name:
 				name = selector.css('ol.inline > li:nth-child(1) article h2::text').get()
