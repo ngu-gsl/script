@@ -36,7 +36,6 @@ class PeopleFreeSearchCrawler():
 # # 					self.driver.maximize_window()
 # 					print('Trying again!')
 			data = requests.get(url)
-			print('--------data----------', data.text)
 			selector = Selector(text=data.text)
 # 			selector = Selector(text=self.driver.page_source)
 			name = selector.css('ol.inline > li:nth-child(1) article span.d-block::text').get()
