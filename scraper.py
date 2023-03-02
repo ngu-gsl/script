@@ -1,4 +1,4 @@
-import os
+# import os
 import time
 import pandas as pd
 from scrapy import Selector
@@ -52,7 +52,7 @@ class PeopleFreeSearchCrawler():
 			with open('status.csv', 'w') as f:
 				f.write(str(index))
 		
-		os.system('rm status.csv')
+# 		os.system('rm status.csv')
 
 if __name__ == '__main__':
 	scraper = PeopleFreeSearchCrawler()
