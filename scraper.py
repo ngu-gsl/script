@@ -27,14 +27,14 @@ class PeopleFreeSearchCrawler():
 		for index, row in self.df.iloc[index:,:].iterrows():
 			url = row['Link']
 			print('Scraping... {}/{} === {}'.format(index, self.df.shape[0], url))
-			while True:
-				try:
-					self.driver.get(url)
-					break
-				except:
-# 					self.driver = uc.Chrome(version_main=109)
-# 					self.driver.maximize_window()
-					print('Trying again!')
+# 			while True:
+# 				try:
+# 					self.driver.get(url)
+# 					break
+# 				except:
+# # 					self.driver = uc.Chrome(version_main=109)
+# # 					self.driver.maximize_window()
+# 					print('Trying again!')
 			data = requests.get(url)
 			print('--------data----------', data.text)
 			selector = Selector(text=data.text)
